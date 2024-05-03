@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{{ Post.Name }} replied your post!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <p>Hey {{ ParentPost.Name }}, your post in <a href="{{ Thread.URL }}">{{ Thread.Title }}</a>, got a new reply from {{ ParentPost.Name }}:</p>
+    <blockquote>{{ Post.Content }}</blockquote>
+    <p>You may want to reply the post <a href="{{ Thread.URL }}">here</a>, or <a href="{{ UnsubscribeURL }}">unsubscribe</a>.</p>
+</body>
+</html>

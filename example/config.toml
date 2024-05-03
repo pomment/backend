@@ -1,0 +1,50 @@
+[system]
+host = "0.0.0.0"
+port = 8080
+url = "https://cm.tcdw.net"
+
+[admin]
+salt = "example_salt"
+
+[[admin.user]]
+name = "admin"
+email = "admin@example.com"
+password = "12345678abc"
+
+[[admin.user]]
+name = "admin2"
+email = "admin2@example.com"
+password = "12345678abc"
+
+[email]
+enabled = false
+mode = "mailgun"
+title = "You got new reply!"
+sender = '"example" <noreply@example.com>'
+smtpHost = "smtp.example.com"
+smtpPort = 587
+smtpUsername = "postmaster@example.com"
+smtpPassword = "12345678abc"
+mailgunAPIKey = "12345678"
+mailgunDomain = "mg.example.com"
+
+[reCAPTCHA]
+enabled = false
+secretKey = "12345678abc"
+minimumScore = 0.1
+
+[push]
+enabled = false
+gateway = "http://localhost:8081"
+siteName = "example_com"
+siteKey = "example_key"
+
+[redis]
+enabled = false
+host = "localhost"
+port = 6_379
+password = ""
+database = 0
+
+[avatar]
+useSha256 = false
