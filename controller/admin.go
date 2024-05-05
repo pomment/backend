@@ -3,13 +3,13 @@ package controller
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
+	"github.com/pomment/pomment/auth"
+	"github.com/pomment/pomment/common"
+	"github.com/pomment/pomment/config"
+	"github.com/pomment/pomment/dao"
+	"github.com/pomment/pomment/model"
+	"github.com/pomment/pomment/utils"
 	"net/http"
-	"pomment-go/auth"
-	"pomment-go/common"
-	"pomment-go/config"
-	"pomment-go/dao"
-	"pomment-go/model"
-	"pomment-go/utils"
 	"strings"
 )
 

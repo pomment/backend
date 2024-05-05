@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/go-resty/resty/v2"
+	"github.com/pomment/pomment/common"
+	"github.com/pomment/pomment/config"
 	"net/http"
-	"pomment-go/common"
-	"pomment-go/config"
-	//"pomment-go/model"
+	//"github.com/pomment/pomment/model"
 )
 
 // PushToClient 将评论提醒推送到手机客户端

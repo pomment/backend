@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/pomment/pomment"
+	"github.com/pomment/pomment/config"
+	"github.com/pomment/pomment/dao"
 	"log"
 	"path"
-	"pomment-go/config"
-	"pomment-go/dao"
 )
 
 func StartStandaloneServer(basePath string) error {
@@ -33,7 +34,7 @@ func StartStandaloneServer(basePath string) error {
 
 	// 初始化路由
 	log.Println("Initializing routes...")
-	InitStandaloneRoutes(engine, "/")
+	pomment.InitStandaloneRoutes(engine, "/")
 
 	// 初始化缓存
 	log.Println("Initializing cache service...")

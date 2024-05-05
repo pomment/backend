@@ -2,7 +2,7 @@ package common
 
 import (
 	"github.com/hoisie/mustache"
-	"pomment-go/utils/recaptcha"
+	"github.com/pomment/pomment/utils/recaptcha"
 )
 
 type PommentConfig struct {

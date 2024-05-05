@@ -3,8 +3,8 @@ package controller
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"pomment-go/config"
-	"pomment-go/model"
+	"github.com/pomment/pomment/config"
+	"github.com/pomment/pomment/model"
 )
 
 func RobotsTxt(c *gin.Context) {

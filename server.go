@@ -1,9 +1,9 @@
-package main
+package pomment
 
 import (
 	"github.com/gin-gonic/gin"
-	"pomment-go/controller"
-	"pomment-go/middleware"
+	"github.com/pomment/pomment/controller"
+	"github.com/pomment/pomment/middleware"
 )
 
 // InitStandaloneRoutes Initialize base routes for standalone operation

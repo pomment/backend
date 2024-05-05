@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 	"github.com/golang-jwt/jwt"
+	"github.com/pomment/pomment/common"
+	"github.com/pomment/pomment/config"
 	"golang.org/x/crypto/bcrypt"
-	"pomment-go/common"
-	"pomment-go/config"
 	"time"
 )
 

@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"crypto/sha256"
 	"encoding/hex"
-	"pomment-go/config"
+	"github.com/pomment/pomment/config"
 )
 
 func GetMailHash(text string) string {

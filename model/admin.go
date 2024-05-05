@@ -2,8 +2,8 @@ package model
 
 import (
 	"encoding/json"
+	"github.com/pomment/pomment/dao"
 	"path/filepath"
-	"pomment-go/dao"
 )
 
 func GetThreadList() (files []string, err error) {

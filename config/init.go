@@ -3,12 +3,12 @@ package config
 import (
 	"github.com/hoisie/mustache"
 	"github.com/pelletier/go-toml/v2"
+	"github.com/pomment/pomment/common"
+	"github.com/pomment/pomment/dao"
+	"github.com/pomment/pomment/utils/recaptcha"
 	"io"
 	"os"
 	"path/filepath"
-	"pomment-go/common"
-	"pomment-go/dao"
-	"pomment-go/utils/recaptcha"
 	"time"
 )
 

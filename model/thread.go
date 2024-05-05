@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"errors"
 	"github.com/google/uuid"
-	"pomment-go/common"
-	"pomment-go/dao"
+	"github.com/pomment/pomment/common"
+	"github.com/pomment/pomment/dao"
 )
 
 // GetThreadRelationList 获取评论串关系列表

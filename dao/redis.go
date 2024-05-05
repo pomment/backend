@@ -3,8 +3,8 @@ package dao
 import (
 	"context"
 	"errors"
+	"github.com/pomment/pomment/common"
 	"github.com/redis/go-redis/v9"
-	"pomment-go/common"
 	"time"
 )
 

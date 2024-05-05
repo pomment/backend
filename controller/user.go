@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
+	"github.com/pomment/pomment/common"
+	"github.com/pomment/pomment/dao"
+	"github.com/pomment/pomment/model"
+	"github.com/pomment/pomment/utils"
 	"net/http"
-	"pomment-go/common"
-	"pomment-go/dao"
-	"pomment-go/model"
-	"pomment-go/utils"
 )
 
 // ThreadMeta 获取评论串元数据

@@ -1,6 +1,8 @@
-package main
+package pomment
 
-import "pomment-go/config"
+import (
+	"github.com/pomment/pomment/config"
+)
 
 // InitConfig Initialize Pomment from config file
 func InitConfig(basePath string) (err error) {

@@ -3,9 +3,9 @@ package message
 import (
 	"context"
 	"fmt"
+	"github.com/pomment/pomment/common"
+	"github.com/pomment/pomment/config"
 	"net/smtp"
-	"pomment-go/common"
-	"pomment-go/config"
 	"time"
 
 	"github.com/jordan-wright/email"

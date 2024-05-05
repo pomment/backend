@@ -3,9 +3,9 @@ package middleware
 import (
 	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/pomment/pomment/auth"
+	"github.com/pomment/pomment/utils"
 	"net/http"
-	"pomment-go/auth"
-	"pomment-go/utils"
 	"strings"
 )
 
