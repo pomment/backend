@@ -1,4 +1,4 @@
-module pomment-go
+module github.com/pomment/backend
 
 go 1.19
 
