@@ -10,6 +10,10 @@ func InitConfig(basePath string) (err error) {
 	return config.InitConfig(basePath)
 }
 
+func InitExampleConfig(basePath string) (err error) {
+	return config.InitExampleConfig(basePath)
+}
+
 // ConnectToRedisServer Connect to a Redis server for pomment service
 func ConnectToRedisServer(enabled bool, addr string, password string, db int) {
 	dao.ConnectToRedisServer(enabled, addr, password, db)
