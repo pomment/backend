@@ -42,7 +42,7 @@ siteKey = "example_key"
 [redis]
 enabled = false
 host = "localhost"
-port = 6_379
+port = 6379
 password = ""
 database = 0
 

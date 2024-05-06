@@ -159,7 +159,8 @@ func SendNotifyEmail(post common.Post, thread common.Thread) (err error) {
 }
 
 type AppendPostUserArgs struct {
-	URL               string `json:"url" validate:"required"`
+	ID                string `json:"id"`
+	URL               string `json:"url"`
 	Title             string `json:"title" validate:"required"`
 	Parent            string `json:"parent"`
 	Name              string `json:"name" validate:"required"`
@@ -171,10 +172,19 @@ type AppendPostUserArgs struct {
 }
 
 func AppendPostUser(req AppendPostUserArgs) (post common.Post, err error) {
+	var meta *common.Thread
 	// 获取评论元数据
-	meta, err := GetThreadMetaForSubmit(req.URL, req.Title)
-	if err != nil {
-		return common.Post{}, err
+	if req.ID == "" {
+		// 无 ID，使用 URL 查询 meta
+		meta, err = GetThreadMetaForSubmit(req.URL, req.Title)
+		if err != nil {
+			return common.Post{}, err
+		}
+	} else {
+		meta, err = GetThreadMeta(req.ID)
+		if err != nil {
+			return common.Post{}, err
+		}
 	}
 
 	// 过滤非法 URL
