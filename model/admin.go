@@ -3,6 +3,7 @@ package model
 import (
 	"encoding/json"
 	"github.com/pomment/pomment/dao"
+	"log"
 	"path/filepath"
 )
 
@@ -14,7 +15,8 @@ func GetThreadList() (files []string, err error) {
 func LoadFCMTokenList() (list []string, err error) {
 	res, err := dao.ReadJSON("fcm-tokens.json")
 	if err != nil {
-		return list, err
+		log.Printf("Unable to read fcm-tokens.json: %s. Loading initial list instead.", err)
+		return make([]string, 0), nil
 	}
 
 	// 读取 JSON，追加列表

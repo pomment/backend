@@ -6,13 +6,15 @@ import (
 	"github.com/google/uuid"
 	"github.com/pomment/pomment/common"
 	"github.com/pomment/pomment/dao"
+	"log"
 )
 
 // GetThreadRelationList 获取评论串关系列表
 func GetThreadRelationList() (list []common.ThreadMapItem, err error) {
 	res, err := dao.ReadJSON("index.json")
 	if err != nil {
-		return nil, err
+		log.Printf("Unable to read index.json: %s. Loading initial list instead.", err)
+		return make([]common.ThreadMapItem, 0), nil
 	}
 
 	err = json.Unmarshal([]byte(res), &list)
