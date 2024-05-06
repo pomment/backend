@@ -160,8 +160,8 @@ func SendNotifyEmail(post common.Post, thread common.Thread) (err error) {
 
 type AppendPostUserArgs struct {
 	ID                string `json:"id"`
-	URL               string `json:"url"`
-	Title             string `json:"title"`
+	URL               string `json:"url" validate:"required"`
+	Title             string `json:"title" validate:"required"`
 	Parent            string `json:"parent"`
 	Name              string `json:"name" validate:"required"`
 	Email             string `json:"email" validate:"required,email"`
@@ -175,22 +175,10 @@ func AppendPostUser(req AppendPostUserArgs) (post common.Post, err error) {
 	var meta *common.Thread
 
 	// 获取评论元数据
-	if req.ID == "" {
-		// 无 ID 时 -> 检查 title 和 url 是否设置，设置后才可以继续
-		if req.Title == "" || req.URL == "" {
-			return common.Post{}, errors.New("missing required fields")
-		}
-		// 使用 URL 查询 meta
-		meta, err = GetThreadMetaForSubmit(req.URL, req.Title)
-		if err != nil {
-			return common.Post{}, err
-		}
-	} else {
-		// 有 ID 时
-		meta, err = GetThreadMeta(req.ID)
-		if err != nil {
-			return common.Post{}, err
-		}
+	// 使用 URL 查询 meta
+	meta, err = GetThreadMetaForSubmit(req.URL, req.Title, req.ID)
+	if err != nil {
+		return common.Post{}, err
 	}
 
 	// 过滤非法 URL

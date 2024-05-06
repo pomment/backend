@@ -119,13 +119,17 @@ func RegisterThread(item common.Thread) (err error) {
 }
 
 // GetThreadMetaForSubmit 获取评论串（如果不存在则增加一条）
-func GetThreadMetaForSubmit(url string, title string) (item *common.Thread, err error) {
+func GetThreadMetaForSubmit(url string, title string, id string) (item *common.Thread, err error) {
 	resRelation, err := GetThreadRelationByURL(url)
 	// 没有评论串，需要新建元数据
 	if err != nil {
 		var item common.Thread
 
-		item.ID = uuid.New().String()
+		if id == "" {
+			item.ID = uuid.New().String()
+		} else {
+			item.ID = id
+		}
 		item.URL = url
 		item.Title = title
 		err = RegisterThread(item)
