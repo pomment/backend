@@ -46,7 +46,7 @@ require (
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	golang.org/x/arch v0.7.0 // indirect
-	golang.org/x/net v0.22.0 // indirect
+	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sys v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
