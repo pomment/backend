@@ -8,7 +8,7 @@ import (
 )
 
 func GetThreadList() (files []string, err error) {
-	files, err = filepath.Glob(filepath.Join("threads/*.meta.json"))
+	files, err = filepath.Glob(filepath.Join(dao.BasePath, "threads/*.meta.json"))
 	return files, err
 }
 
