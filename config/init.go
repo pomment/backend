@@ -43,22 +43,22 @@ func InitConfig(basePath string) (err error) {
 	// 邮件模板读取
 	{
 		collection := Content.WebTemplate
-		bodyRaw, err := dao.ReadTextFile(filepath.Join(basePath, "template/email.html"))
+		bodyRaw, err := dao.ReadTextFile("template/email.html")
 		if err != nil {
 			return err
 		}
 
-		unsubscribeConfirmRaw, err := dao.ReadTextFile(filepath.Join(basePath, "template/unsubscribe.html"))
+		unsubscribeConfirmRaw, err := dao.ReadTextFile("template/unsubscribe.html")
 		if err != nil {
 			return err
 		}
 
-		unsubscribeSuccessRaw, err := dao.ReadTextFile(filepath.Join(basePath, "template/unsubscribe_success.html"))
+		unsubscribeSuccessRaw, err := dao.ReadTextFile("template/unsubscribe_success.html")
 		if err != nil {
 			return err
 		}
 
-		unsubscribeErrorRaw, err := dao.ReadTextFile(filepath.Join(basePath, "template/unsubscribe_error.html"))
+		unsubscribeErrorRaw, err := dao.ReadTextFile("template/unsubscribe_error.html")
 		if err != nil {
 			return err
 		}
