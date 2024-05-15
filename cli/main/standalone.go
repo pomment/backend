@@ -14,7 +14,7 @@ import (
 func StartStandaloneServer(basePath string) error {
 	// 读取配置文件
 	log.Println("Initializing configuration...")
-	dao.InitJSONBasePath(path.Join(basePath))
+	dao.InitDataBasePath(path.Join(basePath))
 	err := config.InitConfig(basePath)
 
 	if err != nil {

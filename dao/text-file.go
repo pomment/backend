@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"path/filepath"
 )
 
-func ReadTextFile(path string) (res string, err error) {
-	absPath := path
+func ReadTextFile(p string) (res string, err error) {
+	absPath := filepath.Join(BasePath, p)
 
 	// 检查文件存在
 	_, err = os.Stat(absPath)

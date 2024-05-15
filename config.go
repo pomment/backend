@@ -8,7 +8,7 @@ import (
 
 // InitConfig Initialize Pomment from config file
 func InitConfig(basePath string) (err error) {
-	dao.InitJSONBasePath(path.Join(basePath))
+	dao.InitDataBasePath(path.Join(basePath))
 	return config.InitConfig(basePath)
 }
 

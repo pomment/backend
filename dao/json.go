@@ -8,14 +8,6 @@ import (
 	"path/filepath"
 )
 
-var (
-	BasePath = ""
-)
-
-func InitJSONBasePath(p string) {
-	BasePath = p
-}
-
 func ReadJSON(p string) (content string, err error) {
 	absPath := filepath.Join(BasePath, p)
 
