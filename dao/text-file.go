@@ -8,8 +8,11 @@ import (
 	"path/filepath"
 )
 
-func ReadTextFile(p string) (res string, err error) {
+func ReadTextFile(p string, absolute bool) (res string, err error) {
 	absPath := filepath.Join(BasePath, p)
+	if absolute {
+		absPath = p
+	}
 
 	// 检查文件存在
 	_, err = os.Stat(absPath)

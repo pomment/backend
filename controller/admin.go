@@ -73,7 +73,7 @@ func ThreadList(c *gin.Context) {
 	}
 	var str = "["
 	for i, s := range list {
-		meta, err := dao.ReadTextFile(s)
+		meta, err := dao.ReadTextFile(s, true)
 		if err != nil {
 			utils.AjaxError(c, http.StatusInternalServerError, err)
 			return
