@@ -51,7 +51,6 @@ func InitManageRoutes(engine *gin.RouterGroup, prefix string, enableVerify bool)
 	m := engine.Group(prefix, verifyHandler)
 	{
 		m.GET("health", controller.Health)
-		m.GET("userInfo", controller.UserInfo)
 		m.GET("thread/list", controller.ThreadList)
 		m.GET("thread/:id", controller.ThreadID)
 		m.GET("thread/meta/:id", controller.ThreadMetaID)

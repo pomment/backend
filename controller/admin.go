@@ -43,27 +43,6 @@ func Auth(c *gin.Context) {
 	utils.AjaxSuccess(c, token)
 }
 
-func UserInfo(c *gin.Context) {
-	reqToken := c.GetHeader("Authorization")
-	splitToken := strings.Split(reqToken, "Bearer ")
-	reqToken = splitToken[1]
-	username, err := auth.ValidateToken(reqToken)
-	if err != nil {
-		utils.AjaxError(c, http.StatusInternalServerError, err)
-		return
-	}
-
-	user, err := auth.FindUserByName(username)
-	if err != nil {
-		utils.AjaxError(c, http.StatusInternalServerError, err)
-		return
-	}
-	utils.AjaxSuccess(c, map[string]interface{}{
-		"name":  &user.Name,
-		"email": &user.Email,
-	})
-}
-
 // ThreadList 评论串元数据列表
 func ThreadList(c *gin.Context) {
 	list, err := model.GetThreadList()
