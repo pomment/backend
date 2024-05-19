@@ -10,7 +10,6 @@ import (
 	"github.com/pomment/pomment/model"
 	"github.com/pomment/pomment/utils"
 	"net/http"
-	"strings"
 )
 
 // Auth 鉴权
@@ -119,31 +118,13 @@ func ThreadMetaIDEdit(c *gin.Context) {
 
 // PostsAddAdmin 新增评论
 func PostsAddAdmin(c *gin.Context) {
-	// 获取当前用户资料
-	reqToken := c.GetHeader("Authorization")
-	splitToken := strings.Split(reqToken, "Bearer ")
-	reqToken = splitToken[1]
-	username, err := auth.ValidateToken(reqToken)
-	if err != nil {
-		utils.AjaxError(c, http.StatusInternalServerError, err)
-		return
-	}
-
-	user, err := auth.FindUserByName(username)
-	if err != nil {
-		utils.AjaxError(c, http.StatusInternalServerError, err)
-		return
-	}
-
 	// 数据解析
 	req := model.AppendPostAdminArgs{}
-	err = c.BindJSON(&req)
+	err := c.BindJSON(&req)
 	if err != nil {
 		utils.AjaxError(c, http.StatusBadRequest, err)
 		return
 	}
-	req.Name = user.Name
-	req.Email = user.Email
 
 	// 数据校验
 	validate := validator.New()

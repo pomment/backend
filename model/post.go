@@ -236,8 +236,8 @@ func AppendPostUser(req AppendPostUserArgs) (post common.Post, err error) {
 }
 
 type AppendPostAdminArgs struct {
-	Name    string `json:"name"`
-	Email   string `json:"email"`
+	Name    string `json:"name" validate:"required"`
+	Email   string `json:"email" validate:"required"`
 	Parent  string `json:"parent"`
 	Content string `json:"content" validate:"required"`
 }
