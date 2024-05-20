@@ -174,3 +174,17 @@ func UpdateThreadMeta(id string) (meta *common.Thread, err error) {
 	err = SetThreadMeta(*meta)
 	return meta, err
 }
+
+func UpdateAllThreadMeta() (err error) {
+	list, err := GetThreadRelationList()
+	if err != nil {
+		return err
+	}
+	for _, e := range list {
+		_, err = UpdateThreadMeta(e.ID)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}

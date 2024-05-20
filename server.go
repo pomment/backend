@@ -52,6 +52,7 @@ func InitManageRoutes(engine *gin.RouterGroup, prefix string, enableVerify bool)
 	{
 		m.GET("health", controller.Health)
 		m.GET("thread/list", controller.ThreadList)
+		m.POST("thread/refresh", controller.UpdateAllThreadMeta)
 		m.GET("thread/:id", controller.ThreadID)
 		m.GET("thread/meta/:id", controller.ThreadMetaID)
 		m.PUT("thread/meta", controller.ThreadMetaIDEdit)

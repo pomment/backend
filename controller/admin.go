@@ -190,6 +190,7 @@ func FCMTokenReplace(c *gin.Context) {
 	utils.AjaxSuccess(c, nil)
 }
 
+// FCMTokenDelete 删除 FCM 令牌
 func FCMTokenDelete(c *gin.Context) {
 	// 未启用推送，不进行任何操作
 	if !config.Content.Push.Enabled {
@@ -214,8 +215,19 @@ func FCMTokenDelete(c *gin.Context) {
 	utils.AjaxSuccess(c, nil)
 }
 
+// CacheDelete 清除 Redis 缓存
 func CacheDelete(c *gin.Context) {
 	err := dao.DeleteAllCache()
+
+	if err != nil {
+		utils.AjaxError(c, http.StatusInternalServerError, err)
+		return
+	}
+	utils.AjaxSuccess(c, nil)
+}
+
+func UpdateAllThreadMeta(c *gin.Context) {
+	err := model.UpdateAllThreadMeta()
 
 	if err != nil {
 		utils.AjaxError(c, http.StatusInternalServerError, err)
