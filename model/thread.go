@@ -144,7 +144,7 @@ func GetThreadMetaForSubmit(url string, title string, id string) (item *common.T
 }
 
 func UpdateThreadMeta(id string) (meta *common.Thread, err error) {
-	post, err := GetPostsSimpleByID(id)
+	post, err := GetPostsByID(id)
 	meta, err = GetThreadMeta(id)
 	meta.Amount = 0
 
